@@ -1,11 +1,12 @@
 require('dotenv').config();
 const mysql = require('mysql');
 
+
 const local = {
   host: 'localhost',
   port: process.env.PORT || 3306,
-  user: process.env.MYSQL_USER, 
-  password: process.env.MYSQL_PASSWD,  
+  user: "root",
+  password: "password",
   database: 'burgers_db'
 };
 

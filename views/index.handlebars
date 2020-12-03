@@ -1,0 +1,37 @@
+<div class="text-center">
+  <div class="container">
+    <img src="assets/image/burger.png" class="img-fluid rounded burger-img mt-1">
+    <h1 class="display-5 title">Eat-Da-Burger!</h1>
+
+    <div class="row">
+      <div class="col" id="left-col">
+        <div class="text-right ml-auto mr-5">
+          {{#each burgers}}
+            {{#unless devoured}}
+              <div class="mb-1">
+                {{burger_name}}
+                <button class="btn btn-sm btn-outline-danger devour" burgerId="{{id}}">
+                  Devour It!
+                </button>
+              </div>
+            {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="col" id="right-col">
+        <div class="text-left mr-auto ml-5">
+          {{#each burgers}}
+            {{#if devoured}}
+              <div class="mb-1">
+                {{burger_name}}
+                <button class="btn btn-sm btn-outline-dark remove" burgerId="{{id}}">
+                  Delete
+                </button>
+              </div>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+
+    </div>
