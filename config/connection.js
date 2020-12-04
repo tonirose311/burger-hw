@@ -10,6 +10,17 @@ const local = {
   database: 'burgers_db'
 };
 
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'burgers_db'
+  });
+};
+
 const jawsdb = process.env.DATABASE_URL;
 const connParams = (process.env.DATABASE_URL) ? jawsdb : local;
 const connection = mysql.createConnection(connParams);
